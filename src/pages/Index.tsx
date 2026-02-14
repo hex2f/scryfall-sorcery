@@ -80,8 +80,16 @@ const Index = () => {
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                     >
-                      <Badge variant="secondary" className="font-mono text-xs">
-                        🔧 {tool.name}
+                      <Badge
+                        variant="secondary"
+                        className="font-mono text-xs gap-1 rounded-lg"
+                      >
+                        {tool.name === "scryfall_get_card_named" && tool.args?.name && (
+                          <span className="text-muted-foreground text-xs font-normal">🃏 "{String(tool.args.name)}"</span>
+                        )}
+                        {tool.name === "scryfall_search" && tool.args?.q && (
+                          <span className="text-muted-foreground text-xs font-normal">🔎 "{String(tool.args.q)}"</span>
+                        )}
                       </Badge>
                     </motion.div>
                   ))}
