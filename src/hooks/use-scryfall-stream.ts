@@ -15,7 +15,7 @@ export type StreamState = {
   showCursor: boolean;
 };
 
-const API_URL = "http://1414.gpu.mainly.cloud/stream_run_payload";
+const API_URL = "https://1414.gpu.mainly.cloud/stream_run_payload";
 
 export function useScryfallStream() {
   const [state, setState] = useState<StreamState>({
